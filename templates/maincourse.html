@@ -1,0 +1,109 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="item-bg-container d-flex flex-column">
+    <div class="p-4">
+        <img src="https://as2.ftcdn.net/jpg/02/82/76/39/1000_F_282763972_xKMyYads8XYGamLEhNGHQOAKT9Eyo9Dc.jpg"
+             class="item-fire-fork-logo" />
+    </div>
+
+    <p class="item-caption">Because you searched for "Main Course"</p>
+
+    <div class="d-flex flex-row flex-wrap justify-content-center">
+        <form action="{{ url_for('add_to_cart') }}" method="post"
+              class="shadow menu-item-card p-4 m-3 text-center">
+            <img class="menu-card-image mb-3 w-100"
+                 src="https://www.shutterstock.com/shutterstock/photos/589643372/display_1500/stock-photo-chicken-biryani-589643372.jpg"/>
+            <h1 class = "menu-card-title">Chicken Biriyani</h1>
+            <span class="price">&#8377;259</span>
+            <input type="hidden" name="item_name" value="Chicken Biriyani">
+            <input type="hidden" name="item_price" value="259">
+            <input type="hidden" name="current_page" value="maincourse">
+            <button type="submit" class="add-to-cart-btn">Add to Cart</button>
+        </form>
+
+        <form action="{{ url_for('add_to_cart') }}" method="post"
+              class="shadow menu-item-card p-4 m-3 text-center">
+            <img class="menu-card-image mb-3 w-100"
+                 src="https://www.shutterstock.com/shutterstock/photos/2270110449/display_1500/stock-photo-mutton-gosht-biryani-spicy-indian-malabar-lamb-meat-biryani-hyderabadi-biryani-dum-biriyani-pulao-2270110449.jpg"/>
+            <h1 class = "menu-card-title">Mutton Biriyani</h1>
+            <span class="price">&#8377;259</span>   
+            <input type="hidden" name="item_name" value="Mutton Biriyani">
+            <input type="hidden" name="item_price" value="259">
+            <input type="hidden" name="current_page" value="maincourse">
+            <button type="submit" class="add-to-cart-btn">Add to Cart</button>
+        </form>
+        <form action="{{ url_for('add_to_cart') }}" method="post" class = "shadow menu-item-card p-4 m-3">
+            <img class = "menu-card-image mb-3 w-100" src="https://www.shutterstock.com/shutterstock/photos/2658533767/display_1500/stock-photo-chicken-biryani-served-on-a-plate-topped-with-fried-onions-cashews-raisins-and-cilantro-2658533767.jpg"/>
+            <h1 class = "menu-card-title">Fry-piece Biriyani</h1>
+            <span class="price">&#8377;219</span>
+            <input type="hidden" name="item_name" value="Fry-piece Biriyani">
+            <input type="hidden" name="item_price" value="219">
+            <input type="hidden" name="quantity" value=1>
+            <input type="hidden" name="current_page" value="maincourse">
+            <button type = "submit" class="add-to-cart-btn">Add to Cart</button>
+        </form>
+        <form action="{{ url_for('add_to_cart') }}" method="post" class = "shadow menu-item-card p-4 m-3">
+            <img class = "menu-card-image mb-3 w-100" src="https://www.shutterstock.com/shutterstock/photos/2559214479/display_1500/stock-photo-delicious-chicken-biriyani-with-sode-dishes-in-a-white-bowl-2559214479.jpg"/>
+            <h1 class = "menu-card-title">Chicken 65</h1>
+            <span class="price">&#8377;209</span>
+            <input type="hidden" name="item_name" value="Chicken 65">
+            <input type="hidden" name="item_price" value="209">
+            <input type="hidden" name="quantity" value=1>
+            <input type="hidden" name="current_page" value="maincourse">
+            <button type = "submit" class="add-to-cart-btn">Add to Cart</button>
+        </form>
+        <form action="{{ url_for('add_to_cart') }}" method="post" class = "shadow menu-item-card p-4 m-3">
+            <img class = "menu-card-image mb-3 w-100" src="https://www.shutterstock.com/shutterstock/photos/2279389571/display_1500/stock-photo-paneer-makhani-biryani-makhani-biryani-2279389571.jpg"/>
+            <h1 class = "menu-card-title">Paneer Biriyani</h1>
+            <span class="price">&#8377;259</span>
+            <input type="hidden" name="item_name" value="Paneer Biriyani">
+            <input type="hidden" name="item_price" value="259">
+            <input type="hidden" name="quantity" value=1>
+            <input type="hidden" name="current_page" value="maincourse">
+            <button type = "submit" class="add-to-cart-btn">Add to Cart</button>
+        </form>
+        <form action="{{ url_for('add_to_cart') }}" method="post" class = "shadow menu-item-card p-4 m-3">
+            <img class = "menu-card-image mb-3 w-100" src="https://www.shutterstock.com/shutterstock/photos/2491519037/display_1500/stock-photo-mushroom-biryani-is-a-fragrant-rice-dish-with-tender-mushrooms-spiced-with-cumin-coriander-and-2491519037.jpg"/>
+            <h1 class = "menu-card-title">Mushroom Biriyani</h1>
+            <span class="price">&#8377;239</span>
+            <input type="hidden" name="item_name" value="Mushroom Biriyani">
+            <input type="hidden" name="item_price" value="239">
+            <input type="hidden" name="quantity" value=1>
+            <input type="hidden" name="current_page" value="maincourse">
+            <button type = "submit" class="add-to-cart-btn">Add to Cart</button>
+        </form>
+        <form action="{{ url_for('add_to_cart') }}" method="post" class = "shadow menu-item-card p-4 m-3">
+            <img class = "menu-card-image mb-3 w-100" src="https://www.shutterstock.com/shutterstock/photos/1931545577/display_1500/stock-photo-indian-paneer-fried-rice-in-a-bowl-garnished-with-cilantro-top-down-photo-1931545577.jpg"/>
+            <h1 class = "menu-card-title">Kaju Paneer</h1>
+            <span class="price">&#8377;259</span>
+            <input type="hidden" name="item_name" value="Kaju Paneer">
+            <input type="hidden" name="item_price" value="259">
+            <input type="hidden" name="quantity" value=1>
+            <input type="hidden" name="current_page" value="maincourse">
+            <button type = "submit" class="add-to-cart-btn">Add to Cart</button>
+        </form>        
+        <form action="{{ url_for('add_to_cart') }}" method="post" class = "shadow menu-item-card p-4 m-3">
+            <img class = "menu-card-image mb-3 w-100" src="https://www.shutterstock.com/shutterstock/photos/1991311166/display_1500/stock-photo-kathal-biryani-is-made-using-raw-jackfruit-pieces-cooked-slowly-with-a-variety-of-spices-and-mixed-1991311166.jpg"/>
+            <h1 class = "menu-card-title">Jack Fruit Biriyani</h1>
+            <span class="price">&#8377;219</span>
+            <input type="hidden" name="item_name" value="Jack Fruit Biriyani">
+            <input type="hidden" name="item_price" value="219">
+            <input type="hidden" name="quantity" value=1>
+            <input type="hidden" name="current_page" value="maincourse">
+            <button type = "submit" class="add-to-cart-btn">Add to Cart</button>
+        </form>
+
+    </div>
+
+    <div class="pt-4 pb-5">
+        <h1>Disclaimer</h1>
+        <ul>
+            <li>All Prices are set directly by the restaurant</li>
+            <li>All nutritional information is indicative values per serve as shared by the restaurant and may vary depending on ingredients and portion size</li>
+            <li>An average active adult requires 2,000 kcal energy per day, however calorie needs may vary.</li>
+            <li>Dish details may be AI crafted for a better experience.</li>
+        </ul>
+    </div>
+</div>
+{% endblock %}

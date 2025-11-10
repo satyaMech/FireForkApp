@@ -1,0 +1,117 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="item-bg-container d-flex flex-column">
+    <div class="p-4">
+        <img src="https://as2.ftcdn.net/jpg/02/82/76/39/1000_F_282763972_xKMyYads8XYGamLEhNGHQOAKT9Eyo9Dc.jpg"
+             class="item-fire-fork-logo" />
+    </div>
+
+    <p class="item-caption">Because you searched for "Veg Starter"</p>
+
+    <div class="d-flex flex-row flex-wrap justify-content-center">
+        <form action="{{ url_for('add_to_cart') }}" method="post"
+              class="shadow menu-item-card p-4 m-3 text-center">
+            <img class="menu-card-image mb-3 w-100"
+                 src="https://www.shutterstock.com/shutterstock/photos/2262011249/display_1500/stock-photo-panner-tikka-in-black-plate-with-mint-chutney-2262011249.jpg"/>
+            <h1 class="menu-card-title">Paneer Tikka</h1>
+            <span class="price">&#8377;259</span>
+            <input type="hidden" name="item_name" value="Paneer Tikka">
+            <input type="hidden" name="item_price" value="259">
+            <input type="hidden" name="current_page" value="veg_starters">
+            <button type="submit" class="add-to-cart-btn">Add to Cart</button>
+        </form>
+
+        <form action="{{ url_for('add_to_cart') }}" method="post"
+              class="shadow menu-item-card p-4 m-3 text-center">
+            <img class="menu-card-image mb-3 w-100"
+                 src="https://www.shutterstock.com/shutterstock/photos/1588142539/display_1500/stock-photo-mushroom-starter-or-appetiser-food-recipe-from-india-served-in-a-plate-with-ketchup-selective-1588142539.jpg"/>
+            <h1 class="menu-card-title">Mushroom 65</h1>
+            <span class="price">&#8377;259</span>
+            <input type="hidden" name="item_name" value="Mushroom 65">
+            <input type="hidden" name="item_price" value="259">
+            <input type="hidden" name="current_page" value="veg_starters">
+            <button type="submit" class="add-to-cart-btn">Add to Cart</button>
+        </form>
+        <form action="{{ url_for('add_to_cart') }}" method="post" class = "shadow menu-item-card p-4 m-3">
+            <img class = "menu-card-image mb-3 w-100" src="https://www.shutterstock.com/shutterstock/photos/2376979647/display_1500/stock-photo-gobi-manchurian-is-a-popular-indo-chinese-appetizer-made-with-cauliflower-corn-flour-soya-sauce-2376979647.jpg"/>
+            <h1 class = "menu-card-title">Gobi Manchuria</h1>
+            <span class="price">&#8377;219</span>
+            <input type="hidden" name="item_name" value="Gobi Manchuria">
+            <input type="hidden" name="item_price" value="219">
+            <input type="hidden" name="quantity" value=1>
+            <input type="hidden" name="current_page" value="veg_starters">
+            <button type = "submit" class="add-to-cart-btn">Add to Cart</button>
+        </form>
+        <form action="{{ url_for('add_to_cart') }}" method="post" class = "shadow menu-item-card p-4 m-3">
+            <img class = "menu-card-image mb-3 w-100" src="https://www.shutterstock.com/shutterstock/photos/783105484/display_1500/stock-photo-crispy-corn-masala-or-chatpata-corn-or-makka-popular-indian-snack-783105484.jpg"/>
+            <h1 class = "menu-card-title">Crispy Corn</h1>
+            <span class="price">&#8377;209</span>
+            <input type="hidden" name="item_name" value="Crispy Corn">
+            <input type="hidden" name="item_price" value="209">
+            <input type="hidden" name="quantity" value=1>
+            <input type="hidden" name="current_page" value="veg_starters">
+            <button type = "submit" class="add-to-cart-btn">Add to Cart</button>
+        </form>
+        <form action="{{ url_for('add_to_cart') }}" method="post" class = "shadow menu-item-card p-4 m-3">
+            <img class = "menu-card-image mb-3 w-100" src="https://www.shutterstock.com/shutterstock/photos/1671335482/display_1500/stock-photo-dahi-ke-kabab-or-kebab-with-paratha-and-papad-served-with-green-chilli-and-sliced-onion-it-is-a-1671335482.jpg"/>
+            <h1 class = "menu-card-title">Dahi ke Kebab</h1>
+            <span class="price">&#8377;259</span>
+            <input type="hidden" name="item_name" value="Dahi ke Kebab">
+            <input type="hidden" name="item_price" value="259">
+            <input type="hidden" name="quantity" value=1>
+            <input type="hidden" name="current_page" value="veg_starters">
+            <button type = "submit" class="add-to-cart-btn">Add to Cart</button>
+        </form>
+        <form action="{{ url_for('add_to_cart') }}" method="post" class = "shadow menu-item-card p-4 m-3">
+            <img class = "menu-card-image mb-3 w-100" src="https://www.shutterstock.com/shutterstock/photos/2667017731/display_1500/stock-photo-fried-spring-rolls-on-plate-on-a-white-table-top-view-2667017731.jpg"/>
+            <h1 class = "menu-card-title">Veg Spring Rolls(6 pcs)</h1>
+            <span class="price">&#8377;239</span>
+            <input type="hidden" name="item_name" value="Veg Spring Rolls">
+            <input type="hidden" name="item_price" value="239">
+            <input type="hidden" name="quantity" value=1>
+            <input type="hidden" name="current_page" value="veg_starters">
+            <button type = "submit" class="add-to-cart-btn">Add to Cart</button>
+        </form>
+        <form action="{{ url_for('add_to_cart') }}" method="post" class = "shadow menu-item-card p-4 m-3">
+            <img class = "menu-card-image mb-3 w-100" src="https://www.shutterstock.com/shutterstock/photos/1504866527/display_1500/stock-photo-paneer-manchurian-or-paneer-in-pan-at-black-concrete-background-paneer-manchurian-is-indian-1504866527.jpg"/>
+            <h1 class = "menu-card-title">Paneer 65</h1>
+            <span class="price">&#8377;259</span>
+            <input type="hidden" name="item_name" value="Paneer 65">
+            <input type="hidden" name="item_price" value="259">
+            <input type="hidden" name="quantity" value=1>
+            <input type="hidden" name="current_page" value="veg_starters">
+            <button type = "submit" class="add-to-cart-btn">Add to Cart</button>
+        </form>        
+        <form action="{{ url_for('add_to_cart') }}" method="post" class = "shadow menu-item-card p-4 m-3">
+            <img class = "menu-card-image mb-3 w-100" src="https://www.shutterstock.com/shutterstock/photos/2108348072/display_1500/stock-photo-plate-with-honey-chilli-potato-on-color-background-2108348072.jpg"/>
+            <h1 class = "menu-card-title">Honey Chilly Potato</h1>
+            <span class="price">&#8377;219</span>
+            <input type="hidden" name="item_name" value="Honey Chilly Potato">
+            <input type="hidden" name="item_price" value="219">
+            <input type="hidden" name="quantity" value=1>
+            <input type="hidden" name="current_page" value="veg_starters">
+            <button type = "submit" class="add-to-cart-btn">Add to Cart</button>
+        </form>
+
+    </div>
+
+    <div class="pt-4 pb-5">
+        <h1>Disclaimer</h1>
+        <ul>
+            <li>All Prices are set directly by the restaurant</li>
+            <li>All nutritional information is indicative values per serve as shared by the restaurant and may vary depending on ingredients and portion size</li>
+            <li>An average active adult requires 2,000 kcal energy per day, however calorie needs may vary.</li>
+            <li>Dish details may be AI crafted for a better experience.</li>
+        </ul>
+    </div>
+</div>
+
+<script>
+  // Prevent form resubmission when the user navigates back or refreshes
+  if (window.history.replaceState) {
+    window.history.replaceState(null, null, window.location.href);
+  }
+</script>
+
+{% endblock %}
