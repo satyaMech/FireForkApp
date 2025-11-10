@@ -1,0 +1,109 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="item-bg-container d-flex flex-column">
+    <div class="p-4">
+        <img src="https://as2.ftcdn.net/jpg/02/82/76/39/1000_F_282763972_xKMyYads8XYGamLEhNGHQOAKT9Eyo9Dc.jpg"
+             class="item-fire-fork-logo" />
+    </div>
+
+    <p class="item-caption">Because you searched for "Fish & Sea Food"</p>
+
+    <div class="d-flex flex-row flex-wrap justify-content-center">
+        <form action="{{ url_for('add_to_cart') }}" method="post"
+              class="shadow menu-item-card p-4 m-3 text-center">
+            <img class="menu-card-image mb-3 w-100"
+                 src="https://www.shutterstock.com/shutterstock/photos/1606841650/display_1500/stock-photo-fish-manchurian-dry-looks-like-schezwan-fish-in-black-bowl-at-dark-slate-background-fish-1606841650.jpg"/>
+            <h1 class = "menu-card-title">Fish Manchuria</h1>
+            <span class="price">&#8377;259</span>
+            <input type="hidden" name="item_name" value="Fish Manchuria">
+            <input type="hidden" name="item_price" value="259">
+            <input type="hidden" name="current_page" value="seafood">
+            <button type="submit" class="add-to-cart-btn">Add to Cart</button>
+        </form>
+
+        <form action="{{ url_for('add_to_cart') }}" method="post"
+              class="shadow menu-item-card p-4 m-3 text-center">
+            <img class="menu-card-image mb-3 w-100"
+                 src="https://www.shutterstock.com/shutterstock/photos/269919008/display_1500/stock-photo-amritsari-fish-269919008.jpg"/>
+            <h1 class = "menu-card-title">Amritsari Fish</h1>
+            <span class="price">&#8377;259</span>   
+            <input type="hidden" name="item_name" value="Amritsari Fish">
+            <input type="hidden" name="item_price" value="259">
+            <input type="hidden" name="current_page" value="seafood">
+            <button type="submit" class="add-to-cart-btn">Add to Cart</button>
+        </form>
+        <form action="{{ url_for('add_to_cart') }}" method="post" class = "shadow menu-item-card p-4 m-3">
+            <img class = "menu-card-image mb-3 w-100" src="https://www.shutterstock.com/shutterstock/photos/2370109691/display_1500/stock-photo-cooked-fried-fish-cutlets-in-a-plate-with-herbs-on-a-light-wooden-table-2370109691.jpg"/>
+            <h1 class = "menu-card-title">Fish Cutlet</h1>
+            <span class="price">&#8377;219</span>
+            <input type="hidden" name="item_name" value="Fish Cutlet">
+            <input type="hidden" name="item_price" value="219">
+            <input type="hidden" name="quantity" value=1>
+            <input type="hidden" name="current_page" value="seafood">
+            <button type = "submit" class="add-to-cart-btn">Add to Cart</button>
+        </form>
+        <form action="{{ url_for('add_to_cart') }}" method="post" class = "shadow menu-item-card p-4 m-3">
+            <img class = "menu-card-image mb-3 w-100" src="https://www.shutterstock.com/shutterstock/photos/2466947659/display_1500/stock-photo-grilled-skewer-shrimps-and-fresh-vegetables-served-on-black-stony-plate-on-wooden-table-2466947659.jpg"/>
+            <h1 class = "menu-card-title">Grilled Prawns</h1>
+            <span class="price">&#8377;209</span>
+            <input type="hidden" name="item_name" value="Grilled Prawns">
+            <input type="hidden" name="item_price" value="209">
+            <input type="hidden" name="quantity" value=1>
+            <input type="hidden" name="current_page" value="seafood">
+            <button type = "submit" class="add-to-cart-btn">Add to Cart</button>
+        </form>
+        <form action="{{ url_for('add_to_cart') }}" method="post" class = "shadow menu-item-card p-4 m-3">
+            <img class = "menu-card-image mb-3 w-100" src="https://www.shutterstock.com/shutterstock/photos/1882706416/display_1500/stock-photo-shrimp-fried-indian-style-cousin-spicy-red-prawn-pan-food-1882706416.jpg"/>
+            <h1 class = "menu-card-title">Prawns 65</h1>
+            <span class="price">&#8377;259</span>
+            <input type="hidden" name="item_name" value="Prawns 65">
+            <input type="hidden" name="item_price" value="259">
+            <input type="hidden" name="quantity" value=1>
+            <input type="hidden" name="current_page" value="seafood">
+            <button type = "submit" class="add-to-cart-btn">Add to Cart</button>
+        </form>
+        <form action="{{ url_for('add_to_cart') }}" method="post" class = "shadow menu-item-card p-4 m-3">
+            <img class = "menu-card-image mb-3 w-100" src="https://www.shutterstock.com/shutterstock/photos/2669451907/display_1500/stock-photo-kerala-style-prawn-ghee-roast-served-in-a-small-kadai-spicy-seafood-delicacy-with-rich-flavors-2669451907.jpg"/>
+            <h1 class = "menu-card-title">Prawn Ghee Roast</h1>
+            <span class="price">&#8377;239</span>
+            <input type="hidden" name="item_name" value="Prawn Ghee Roast">
+            <input type="hidden" name="item_price" value="239">
+            <input type="hidden" name="quantity" value=1>
+            <input type="hidden" name="current_page" value="seafood">
+            <button type = "submit" class="add-to-cart-btn">Add to Cart</button>
+        </form>
+        <form action="{{ url_for('add_to_cart') }}" method="post" class = "shadow menu-item-card p-4 m-3">
+            <img class = "menu-card-image mb-3 w-100" src="https://www.shutterstock.com/shutterstock/photos/2365693983/display_1500/stock-photo-singapore-chili-crab-on-dark-background-close-up-food-2365693983.jpg"/>
+            <h1 class = "menu-card-title">Singapore Chilli Crab</h1>
+            <span class="price">&#8377;259</span>
+            <input type="hidden" name="item_name" value="Singapore Chilli Crab">
+            <input type="hidden" name="item_price" value="259">
+            <input type="hidden" name="quantity" value=1>
+            <input type="hidden" name="current_page" value="seafood">
+            <button type = "submit" class="add-to-cart-btn">Add to Cart</button>
+        </form>        
+        <form action="{{ url_for('add_to_cart') }}" method="post" class = "shadow menu-item-card p-4 m-3">
+            <img class = "menu-card-image mb-3 w-100" src="https://www.shutterstock.com/shutterstock/photos/2349542893/display_1500/stock-photo-black-pepper-crab-indonesia-kepiting-lada-hitam-2349542893.jpg"/>
+            <h1 class = "menu-card-title">Black Pepper Crab</h1>
+            <span class="price">&#8377;219</span>
+            <input type="hidden" name="item_name" value="Black Pepper Crab">
+            <input type="hidden" name="item_price" value="219">
+            <input type="hidden" name="quantity" value=1>
+            <input type="hidden" name="current_page" value="seafood">
+            <button type = "submit" class="add-to-cart-btn">Add to Cart</button>
+        </form>
+
+    </div>
+
+    <div class="pt-4 pb-5">
+        <h1>Disclaimer</h1>
+        <ul>
+            <li>All Prices are set directly by the restaurant</li>
+            <li>All nutritional information is indicative values per serve as shared by the restaurant and may vary depending on ingredients and portion size</li>
+            <li>An average active adult requires 2,000 kcal energy per day, however calorie needs may vary.</li>
+            <li>Dish details may be AI crafted for a better experience.</li>
+        </ul>
+    </div>
+</div>
+{% endblock %}
