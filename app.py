@@ -12,6 +12,9 @@ def get_db():
     sqlconn = sqlite3.connect("App.db")
     return sqlconn
 
+@app.route('/fireforklogin')
+def index():
+    return render_template('login.html')
 
 @app.route('/login', methods = ['GET', 'POST'])
 
