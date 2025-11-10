@@ -1,31 +1,16 @@
 from flask import Flask, render_template, request, redirect, url_for, session, g
-import pymssql
 import os
 from flask import flash
 from flask import make_response
+import sqlite3
 
 
 app = Flask(__name__)
 app.secret_key = os.environ.get('SECRET_KEY', 'default_key_for_dev')
 
 def get_db():
-    sqlconn = pymssql.connect(
-        server =r'DESKTOP-9AHMAG7\SQLEXPRESS',
-        user = 'Automation',
-        password = 'Automation',
-        database= 'App'
-    )
+    sqlconn = sqlite3.connect("App.db")
     return sqlconn
-
-def nocache(view):
-    def no_cache_wrapper(*args, **kwargs):
-        response = make_response(view(*args, **kwargs))
-        response.headers["Cache-Control"] = "no-store, no-cache, must-revalidate, post-check=0, pre-check=0, max-age=0"
-        response.headers["Pragma"] = "no-cache"
-        response.headers["Expires"] = "-1"
-        return response
-    no_cache_wrapper.__name__ = view.__name__
-    return no_cache_wrapper
 
 
 @app.route('/login', methods = ['GET', 'POST'])
@@ -38,14 +23,14 @@ def login():
     
 
         sqlconn = get_db()
-        cursor = sqlconn.cursor(as_dict=True)
-        cursor.execute("SELECT username, secretCode FROM loginForm WHERE username = %s AND secretCode = %s", (username, password) )
+        cursor = sqlconn.cursor()
+        cursor.execute("SELECT username, password FROM loginForm WHERE username = ? AND password = ?", (username, password) )
         user = cursor.fetchone()
         sqlconn.close()
         print(user)
 
         if user:
-            session['username'] = user['username']
+            session['username'] = user[0][0]
             return redirect(url_for('dashboard'))
         elif user == "None":
             error = "Username and password Mismatch"
@@ -68,16 +53,18 @@ def dashboard():
 def register():
     error = None
     success = None
-    if request.method    == "POST":
+    if request.method == "POST":
         firstname = request.form['firstname']
         lastname = request.form['lastname']
         username = request.form['username']
         password = request.form['password']
         email = request.form['email']
 
+        print(username)
+
         sqlconn = get_db()
-        cursor = sqlconn.cursor(as_dict=True)
-        cursor.execute("select * from loginform where username = %s", (username))
+        cursor = sqlconn.cursor()
+        cursor.execute("SELECT * FROM loginform WHERE username = ?", (username,))
         existing_user = cursor.fetchone()
         print(existing_user)
         if existing_user:
@@ -85,7 +72,7 @@ def register():
         elif existing_user == "None":
             error = "Please fill all the details"
         else:
-            cursor.execute("insert into loginform (firstname, lastname, username, secretCode, email) values(%s, %s, %s, %s, %s)", (firstname, lastname, username, password, email))
+            cursor.execute("INSERT INTO loginform (firstname, lastname, username, password, email) values(?, ?, ?, ?, ?)", (firstname, lastname, username, password, email))
             sqlconn.commit()
             success = "Account created successfully! You can now log in."
         sqlconn.close
@@ -96,7 +83,7 @@ def home():
     return render_template('home.html')
 
 @app.route('/veg-starters')
-@nocache
+
 def veg_starters():
     return render_template('veg_starters.html')
 
