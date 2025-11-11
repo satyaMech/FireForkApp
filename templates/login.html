@@ -9,20 +9,21 @@
 </head>
 <body>
     <div class="bgcontainer  d-flex flex-column justify-content-center">
-        <div class="card">
-            <h2 class = "login">Login Account</h2>
-            <form method = "Post" class="d-flex flex-column justify-content-center">
-                <input class = "input" name = "username" type = "text" placeholder="Username" required/>
-                <input class = "input" name = "password" type = "password" placeholder="Password" required/>
-                {%  if error %}
-                    <P class = "error">Please enter valid username and password</P>
-                {% endif %}
-                <button class = "button">Sign In</button>
-                <button type = "button" class = "registerbutton" onclick="window.location.href='{{ url_for('register') }}'">Create New Account</button>
-                <P class = "paragraph">Not registered? Create new acoount!</P>
-            </form>   
+        <div class="col-12 col-md-3">
+            <div class="card">
+                <h2 class = "login">Login Account</h2>
+                <form method = "Post" class="d-flex flex-column justify-content-center">
+                    <input class = "input" name = "username" type = "text" placeholder="Username" required/>
+                    <input class = "input" name = "password" type = "password" placeholder="Password" required/>
+                    {%  if error %}
+                        <P class = "error">Please enter valid username and password</P>
+                    {% endif %}
+                    <button class = "button">Sign In</button>
+                    <button type = "button" class = "registerbutton" onclick="window.location.href='{{ url_for('register') }}'">Create New Account</button>
+                    <P class = "paragraph">Not registered? Create new acoount!</P>
+                </form>   
+            </div>
         </div>
-        
     </div>
 </body>
 </html>
